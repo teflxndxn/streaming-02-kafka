@@ -79,6 +79,7 @@ For Phase 5, I successfully ran the modified Kafka producer and consumer workflo
 
 ---
 
+
 ### Results
 
 The Kafka producer successfully streamed sales transaction messages through Kafka topics.
