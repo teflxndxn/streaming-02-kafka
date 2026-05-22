@@ -191,7 +191,6 @@ def initialize_output() -> RunningStats:
 
 def process_message(row: dict[str, Any]) -> dict[str, Any]:
     """Process one consumed message."""
-
     LOG.info("Custom consumer processing message...")
 
     row["processed_by"] = "blessing"
