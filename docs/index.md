@@ -57,8 +57,9 @@ The Kafka consumer receives streaming sales transaction messages from Kafka.
 
 The consumer processes each message, logs the message details, and stores the records in the `consumed_sales.csv` output file.
 
-The custom consumer also adds a new field called `processed_by` with the value `blessing` before writing the records into the CSV file.
-
+The custom consumer also adds a new field called `processed_by`
+with the value `blessing` before writing the records
+into the CSV file.
 The consumer successfully consumed 6 streaming Kafka messages during testing.
 
 ---
