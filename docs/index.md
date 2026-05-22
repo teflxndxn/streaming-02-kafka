@@ -26,6 +26,7 @@ to get these projects running on your machine.
 The dataset used in this project is `sales.csv`.
 
 The dataset contains streaming product sales transaction records including:
+
 - Order ID
 - Product ID
 - Quantity
@@ -35,7 +36,8 @@ The dataset contains streaming product sales transaction records including:
 - Customer ID
 - Device Type
 
-The Kafka producer reads records from `sales.csv` and streams them through Kafka topics.
+The Kafka producer reads records from `sales.csv`
+and streams them through Kafka topics.
 
 The original sales dataset was used in this project.
 
@@ -43,49 +45,69 @@ The original sales dataset was used in this project.
 
 ### Kafka Messages
 
-The Kafka producer sends sales transaction messages through the Kafka topic `product-sales-case`.
+The Kafka producer sends sales transaction messages
+through the Kafka topic `product-sales-case`.
 
-The producer streams one sales record at a time and uses `region_id` as the Kafka message key.
+The producer streams one sales record at a time
+and uses `region_id` as the Kafka message key.
 
-The message fields include order information, customer information, region information, and payment details.
+The message fields include order information,
+customer information, region information,
+and payment details.
 
 ---
 
 ### Consumer Processing
 
-The Kafka consumer receives streaming sales transaction messages from Kafka.
+The Kafka consumer receives streaming sales
+transaction messages from Kafka.
 
-The consumer processes each message, logs the message details, and stores the records in the `consumed_sales.csv` output file.
+The consumer processes each message,
+logs the message details,
+and stores the records in the
+`consumed_sales.csv` output file.
 
-The custom consumer also adds a new field called `processed_by`
-with the value `blessing` before writing the records
-into the CSV file.
-The consumer successfully consumed 6 streaming Kafka messages during testing.
+The custom consumer also adds a new field
+called `processed_by`
+with the value `blessing`
+before writing the records into the CSV file.
+
+The consumer successfully consumed
+6 streaming Kafka messages during testing.
 
 ---
 
 ### Experiments
 
-For Phase 4, I created a custom consumer file named `kafka_consumer_blessing.py`.
+For Phase 4,
+I created a custom consumer file named
+`kafka_consumer_blessing.py`.
 
-I modified the `process_message()` function by adding:
+I modified the `process_message()` function
+by adding:
 
 ```python
 row["processed_by"] = "blessing"
 ```
 
-This modification added a custom processing field to every consumed Kafka message.
+This modification added a custom processing field
+to every consumed Kafka message.
 
-For Phase 5, I successfully ran the modified Kafka producer and consumer workflow and verified that the updated records were written into the CSV output file.
+For Phase 5,
+I successfully ran the modified Kafka producer
+and consumer workflow
+and verified that the updated records
+were written into the CSV output file.
 
 ---
 
-
 ### Results
 
-The Kafka producer successfully streamed sales transaction messages through Kafka topics.
+The Kafka producer successfully streamed
+sales transaction messages through Kafka topics.
 
 The custom Kafka consumer successfully:
+
 - Consumed streaming sales messages
 - Added the custom `processed_by` field
 - Logged Kafka consumer activity
@@ -95,12 +117,30 @@ The custom Kafka consumer successfully:
 
 ### Interpretation
 
-This Kafka streaming workflow demonstrated how real-time sales transaction data can move between producer and consumer applications.
+This Kafka streaming workflow demonstrated
+how real-time sales transaction data
+can move between producer
+and consumer applications.
 
-Compared to the original example, I modified the consumer to add custom processing information before storing the records.
+Compared to the original example,
+I modified the consumer
+to add custom processing information
+before storing the records.
 
-Watching messages move through Kafka helped me better understand streaming pipelines, Kafka topics, producer-consumer communication, and CSV output generation.
+Watching messages move through Kafka
+helped me better understand
+streaming pipelines,
+Kafka topics,
+producer-consumer communication,
+and CSV output generation.
 
-The consumed messages could help a business monitor product sales activity, customer purchases, payment methods, and regional sales trends in real time.
+The consumed messages could help a business
+monitor product sales activity,
+customer purchases,
+payment methods,
+and regional sales trends in real time.
 
-The streaming workflow provided business intelligence insights about customer transactions and sales operations.
+The streaming workflow provided
+business intelligence insights
+about customer transactions
+and sales operations.
